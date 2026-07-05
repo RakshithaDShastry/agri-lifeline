@@ -4,6 +4,7 @@ import { getLatestBlockHash, calculateBlockHash } from './utils/cryptoChain';
 import TreatmentForm from './components/TreatmentForm';
 import DashboardTable from './components/DashboardTable';
 import { ShieldCheck, LogIn, LogOut, User } from 'lucide-react';
+import AnalyticsPanel from './components/AnalyticsPanel';
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -200,6 +201,9 @@ export default function App() {
             
             <hr className="w-full max-w-4xl border-slate-800/60 my-2" />
             
+            {/* Paste it right here above your table layout */}
+            <AnalyticsPanel treatments={treatments} />
+
             {/* Live Data Visualizations Monitoring Board */}
             <DashboardTable treatments={treatments} loading={loading} />
           </>
